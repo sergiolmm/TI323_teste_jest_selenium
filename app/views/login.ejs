@@ -16,10 +16,13 @@
     </style>
 </head>
 <body>
+    <div>
     <div> <h1>LOGIN</h1></div>
+    
     <% if (error) { %>
-        <div class="erro">Erro <%= error %></div>
+        <div class="erro">KKK <%= error %></div>
     <% } %>
+    
     <form method="POST" action="/login" id="loginForm">
         <div>
             <label for="username">Usuário</label>
@@ -35,5 +38,6 @@
         </div>
         <button type="submit" id="btnLogin">Entrar</button>
     </form>
+    </div>
 </body>
 </html>
