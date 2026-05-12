@@ -28,15 +28,15 @@ function requireAuth( req, res, next){
 
 app.get('/', (req, res) => {
     if (req.session.user) return res.redirect('/calculo');
-    res.render('login', { erro: null });
+    res.render('login', { error: null });
 });
 app.get('/login', (req, res) => {
     if (req.session.user) return res.redirect('/calculo');
-    res.render('login', { erro: null });
+    res.render('login', { error: null });
 });
 app.get('/logout', (req, res) => {
     req.session.destroy();
-    res.redirect('login', { erro: null });
+    res.redirect('login', { error: null });
 });
 
 app.post('/login', (req, res) => {
