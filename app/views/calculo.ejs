@@ -25,18 +25,22 @@
               placeholder="Digita largura" required>           
         </div>
     </form>
-    <button id="btnCalcular" onclick="calcular()">Calcular</button>
+    <button id="btnCalcular" onclick="calcular()">Calcular 1</button>
     <div></div><br>
-    <div><span>Resultado  </span> <span id="data"></span></div>
+    <div><span>Resultado  ... </span> <span id="data"></span></div>
 </body>
 <script>
+    async function teste() {
+        console.log('oi');
+    };
+    async function calcular() {
     const alturaF = parseFloat(document.getElementById('altura').value); 
     const larguraF = parseFloat(document.getElementById('largura').value); 
     const payload = {
         altura : alturaF,
         largura : larguraF,
     };
-    try{
+    try {
         const res = await fetch('/calculo', {
             method: 'POST',
             headers: {'Content-Type':'application/json'},
@@ -49,8 +53,10 @@
         document.getElementById('data').textContent = d.toString();
         
     } catch (err) {
-        alert("erro " = err.message)
-    } finally {}
+        alert("erro " + err.message)
+    } finally {
 
+    }
+}  
 </script>
 </html>

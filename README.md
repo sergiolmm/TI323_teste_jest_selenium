@@ -19,3 +19,12 @@ npm install jest jest-junit supertest -D
 cria o arquivo de entrada index.js
 
 ajustar o package.json para rodar o projeto e os testes
+
+
+cria o diretorio e2e 
+abra o terminal e mude o diretorio para e2e
+rode npm init -y
+rode npm install selemium-webdriver
+
+Vamos cria os testes.
+

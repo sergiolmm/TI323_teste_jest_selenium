@@ -2,6 +2,7 @@ const express = require("express");
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const path = require("path");
+const console = require("console");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -27,13 +28,18 @@ function requireAuth( req, res, next){
 }
 
 app.get('/', (req, res) => {
+    console.log(req.session.user); 
+    console.log("Aqui /");
     if (req.session.user) return res.redirect('/calculo');
     res.render('login', { error: null });
 });
+
 app.get('/login', (req, res) => {
+    console.log("Aqui2 /");
     if (req.session.user) return res.redirect('/calculo');
     res.render('login', { error: null });
 });
+
 app.get('/logout', (req, res) => {
     req.session.destroy();
     res.redirect('login', { error: null });
@@ -42,6 +48,7 @@ app.get('/logout', (req, res) => {
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
     if ( username === 'admin' && password === 'admin') {
+        console.log("Aqui3 /");
         req.session.user = { username: 'admin', nome : 'Administrador' };
         return res.redirect('/calculo');
     }
@@ -49,7 +56,8 @@ app.post('/login', (req, res) => {
 });
 
 // Pagina do calculo
-app.get('/calculo', requireAuth, (res,req) => {
+app.get('/calculo', requireAuth, (req,res) => {
+   console.log(req.session.user); 
    res.render('calculo', { user: req.session.user }); 
 });
 
