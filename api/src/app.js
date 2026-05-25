@@ -16,7 +16,7 @@ app.get('/health', (req, res) => {
         { 
             status: 'ok',
             timestamp: new Date().toISOString(),
-            By: 'SLMM-01'
+            By: 'SLMM-02'
         }
     );
 });
