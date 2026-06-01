@@ -108,6 +108,6 @@ jobs:
           # Gravar as fotos na raiz do projeto no docker
 
           # path: /home/runner/work//aula_teste_101/aula_teste_101/e2e-tests/screenshots/**/*.png
-          path: /home/runner/work//TI323_teste_jest_selenium/TI323_teste_jest_selenium/e2e-tests/screenshots/*.png
+          path: /home/runner/work//TI323_teste_jest_selenium/TI323_teste_jest_selenium/e2e/screenshots/*.png
 
 
