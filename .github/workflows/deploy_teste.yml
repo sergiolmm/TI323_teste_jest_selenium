@@ -86,18 +86,18 @@ jobs:
         run: npx wait-on http://localhost:3001/health http://localhost:3000 --timeout 30000
 
       - name: Instala as dependencias do projeto
-        working-directory: e2e-tests 
+        working-directory: e2e
         run: npm ci    
       - name: Roda os testes Funcionais
         if: success() 
-        working-directory: e2e-tests
+        working-directory: e2e
         run: npm run test 
         env:
           API_URL: http://localhost:3001
           APP_URL: http://localhost:3000
         
       - name: verifica se fez corretamente
-        working-directory: e2e-tests 
+        working-directory: e2e 
         run:  ls -la          
       - name: fotos da tela
         if: success()
