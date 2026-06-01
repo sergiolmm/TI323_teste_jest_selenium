@@ -56,7 +56,7 @@ async function main() {
         tiraFoto("Pagina_erro");
 
         const errMsg = await driver.findElement(By.css('.erro')).getText();
-        if (!errMsg.includes('invalidos')) throw new Error(`falhou : ${errMsg}`);
+        if (!errMsg.includes('inválidos')) throw new Error(`falhou : ${errMsg}`);
 
     } finally{      
         if (driver) await driver.quit();
