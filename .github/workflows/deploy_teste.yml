@@ -1,4 +1,4 @@
-name: Disparo automatico e manual
+name: Teste e Deploy
 
 on:
   push:
